@@ -1,40 +1,27 @@
-import Markdown from 'markdown-to-jsx';
-import Image from 'next/image';
 import { Button } from './Button.jsx';
 
-const themeClassMap = {
-  imgLeft: 'md:flex-row-reverse',
-  imgRight: 'md:flex-row',
-};
-
-export const Hero = (props) => {
+export const Hero = ({ eyebrow, heading, body, primaryCta, secondaryCta }) => {
   return (
-    <div className="px-6 py-16 bg-gray-100 sm:px-12 sm:py-24" data-sb-object-id={props.id}>
-      <div className={`max-w-6xl mx-auto flex flex-col gap-12 md:items-center ${themeClassMap[props.theme] ?? themeClassMap['imgRight']}`}>
-        <div className="flex-1 w-full max-w-xl mx-auto">
-          <h1 className="mb-6 text-4xl font-bold sm:text-5xl" data-sb-field-path="heading">
-            {props.heading}
-          </h1>
-          {props.body && (
-            <Markdown options={{ forceBlock: true }} className="mb-6 text-lg" data-sb-field-path="body">
-              {props.body}
-            </Markdown>
-          )}
-          {props.button && <Button {...props.button} />}
-        </div>
-        <div className="relative flex-1 w-full overflow-hidden rounded-md aspect-4/3">
-          {props.image && (
-            <Image
-              src={props.image.src}
-              alt={props.image.alt}
-              fill
-              className='object-cover'
-              sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 600px"
-              data-sb-field-path="image"
-            />
-          )}
+    <section id="top" className="px-6 pt-28 pb-20 sm:px-12 sm:pt-36 sm:pb-28">
+      <div className="max-w-4xl mx-auto text-center">
+        {eyebrow && (
+          <p className="mb-5 text-sm font-semibold tracking-widest uppercase text-amber-600">
+            {eyebrow}
+          </p>
+        )}
+        <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl">
+          {heading}
+        </h1>
+        {body && (
+          <p className="mx-auto mb-10 text-lg text-slate-600 sm:text-xl max-w-2xl">
+            {body}
+          </p>
+        )}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          {primaryCta && <Button {...primaryCta} />}
+          {secondaryCta && <Button theme="outline" {...secondaryCta} />}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

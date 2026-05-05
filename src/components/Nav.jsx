@@ -1,30 +1,24 @@
 import Link from 'next/link';
 
-const links = [
-  { href: '#product', label: 'Product' },
-  { href: '#updates', label: 'Updates' },
-  { href: '#contact', label: 'Contact' },
-];
-
-export const Nav = () => {
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-6 sm:px-12 h-16 flex items-center justify-between">
-        <Link href="#top" className="font-bold tracking-tight text-slate-900">
-          Setpoint Athletics
+export const Nav = () => (
+  <nav className="top">
+    <div className="container nav-row">
+      <Link className="brand" href="#top">
+        <svg className="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 21 L9 5" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
+          <path d="M21 21 L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
+          <circle cx="12" cy="3.2" r="2.2" fill="oklch(0.58 0.18 25)" />
+        </svg>
+        <span>Setpoint Athletics</span>
+      </Link>
+      <div className="nav-links">
+        <Link href="#problem">The problem</Link>
+        <Link href="#how">How it works</Link>
+        <Link href="#measure">What we measure</Link>
+        <Link className="nav-cta" href="#contact">
+          Get in touch <span aria-hidden="true">→</span>
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium text-slate-700">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="hover:text-slate-900"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
       </div>
-    </header>
-  );
-};
+    </div>
+  </nav>
+);

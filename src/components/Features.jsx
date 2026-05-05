@@ -13,7 +13,7 @@ export const Problem = () => (
       <div className="stats-grid">
         <div className="stat">
           <div className="index">[ 01 ]</div>
-          <div className="figure accent">
+          <div className="figure">
             45%<sup>1</sup>
           </div>
           <p className="desc">
@@ -23,7 +23,7 @@ export const Problem = () => (
         </div>
         <div className="stat">
           <div className="index">[ 02 ]</div>
-          <div className="figure accent">
+          <div className="figure">
             86.5%<sup>2</sup>
           </div>
           <p className="desc">
@@ -33,7 +33,7 @@ export const Problem = () => (
         </div>
         <div className="stat">
           <div className="index">[ 03 ]</div>
-          <div className="figure accent">
+          <div className="figure">
             $50K<sup>3</sup>
           </div>
           <p className="desc">

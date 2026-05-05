@@ -49,39 +49,27 @@ const formatDate = (iso) => {
 
 export const Updates = () => {
   const updates = loadUpdates();
+  if (updates.length === 0) return null;
   return (
-    <section id="updates" className="px-6 py-20 sm:px-12 sm:py-28">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Updates
-          </h2>
-          <p className="text-slate-600 sm:text-lg">
-            A running log of progress as we build.
-          </p>
+    <section id="updates" className="block">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">05 &nbsp;//&nbsp; Updates</span>
+          <h2>A running log of progress.</h2>
         </div>
-        {updates.length === 0 ? (
-          <p className="text-center text-slate-500">No updates yet.</p>
-        ) : (
-          <ol className="space-y-10">
-            {updates.map((u) => (
-              <li
-                key={u.slug}
-                className="pl-6 border-l-2 border-amber-400"
-              >
-                <div className="mb-1 text-sm font-medium uppercase tracking-wider text-slate-500">
-                  {formatDate(u.date)}
-                </div>
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">
-                  {u.title}
-                </h3>
-                <div className="prose prose-slate max-w-none text-slate-700">
+        <div className="updates-list">
+          {updates.map((u) => (
+            <div key={u.slug} className="update-item">
+              <div className="meta">{formatDate(u.date)}</div>
+              <div>
+                <h3>{u.title}</h3>
+                <div style={{ color: 'var(--ink-2)', fontSize: '15px', maxWidth: '600px' }}>
                   <Markdown options={{ forceBlock: true }}>{u.body}</Markdown>
                 </div>
-              </li>
-            ))}
-          </ol>
-        )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

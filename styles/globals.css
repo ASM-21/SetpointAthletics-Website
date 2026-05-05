@@ -278,6 +278,7 @@ section.block {
   color: var(--ink);
 }
 .stat .figure .accent { color: var(--accent); }
+.stat .figure.accent { color: var(--accent); }
 .stat .figure sup {
   font-size: 0.4em;
   color: var(--ink-3);

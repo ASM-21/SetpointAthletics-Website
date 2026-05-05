@@ -13,9 +13,8 @@ export const Problem = () => (
       <div className="stats-grid">
         <div className="stat">
           <div className="index">[ 01 ]</div>
-          <div className="figure">
-            45<span className="accent">%</span>
-            <sup>1</sup>
+          <div className="figure accent">
+            45%<sup>1</sup>
           </div>
           <p className="desc">
             of elite volleyball players develop patellar tendinopathy — vs. 7% in non-jumping
@@ -24,9 +23,8 @@ export const Problem = () => (
         </div>
         <div className="stat">
           <div className="index">[ 02 ]</div>
-          <div className="figure">
-            86<span className="accent">.5%</span>
-            <sup>4</sup>
+          <div className="figure accent">
+            86.5%<sup>2</sup>
           </div>
           <p className="desc">
             of volleyball ACL injuries are non-contact — they happen on landings nobody was
@@ -35,9 +33,8 @@ export const Problem = () => (
         </div>
         <div className="stat">
           <div className="index">[ 03 ]</div>
-          <div className="figure">
-            $50<span className="accent">K</span>
-            <sup>7</sup>
+          <div className="figure accent">
+            $50K<sup>3</sup>
           </div>
           <p className="desc">
             per ACL surgery + rehab. 9–12 months out. Only 44% return to pre-injury level.
@@ -47,10 +44,8 @@ export const Problem = () => (
 
       <div className="citations">
         <span>1 — Lian et al., AJSM 2005, PMID 15722279.</span>
-        <span>4 — Takahashi et al., Medicine 2019, PMID 31261524.</span>
-        <span>
-          7 — CostHelper Health, ACL Reconstruction Cost, 2024. Ardern et al., BJSM 2011.
-        </span>
+        <span>2 — Takahashi et al., Medicine 2019, PMID 31261524.</span>
+        <span>3 — CostHelper Health, ACL Reconstruction Cost, 2024. Ardern et al., BJSM 2011.</span>
       </div>
     </div>
   </section>
